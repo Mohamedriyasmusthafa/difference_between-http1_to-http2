@@ -1,0 +1,27 @@
+  Differences between HTTP/1.1 and HTTP/2
+
+*Protocol Format:
+HTTP/1.1: Uses a textual format for requests and responses. Headers and data are transmitted as plain text.
+HTTP/2: Employs a binary format, which is more compact and efficient for data transmission. Binary framing allows multiplexing.
+
+*Multiplexing:
+HTTP/1.1: Processes requests sequentially, leading to potential delays due to head-of-line blocking.
+HTTP/2: Fully multiplexed, allowing multiple requests and responses to be sent concurrently over a single connection.
+ This minimizes latency.
+
+*Parallelism:
+HTTP/1.1: Requires separate TCP connections for each resource (e.g., images, stylesheets), resulting in overhead.
+HTTP/2: Uses a single connection for parallelism. Multiple resources can be fetched simultaneously, improving performance.
+
+*Header Compression:
+HTTP/1.1: Headers are verbose and add to the payload size.
+HTTP/2: Utilizes header compression (HPACK) to reduce data size. Smaller headers mean faster transmission.
+
+*Server Push:
+HTTP/1.1: Doesn’t support proactive resource pushing.
+HTTP/2: Servers can push resources (e.g., stylesheets, images) to the client cache before
+ they are explicitly requested, enhancing page load speed.
+
+In summary, HTTP/2 is a significant improvement over HTTP/1.1, offering better performance, reduced latency, and efficient resource handling.
+ Developers and website owners should consider adopting HTTP/2 for faster, more responsive web experiences. 
+ 
